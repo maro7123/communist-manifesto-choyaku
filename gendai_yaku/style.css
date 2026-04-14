@@ -53,7 +53,24 @@ figcaption {
   color: #666;
   margin-top: 0.5em;
 }
-/* pandoc 脚注スタイル */
+/* セクション末注釈（blockquote） */
+blockquote {
+  background: #f0ede6;
+  border-left: 3px solid var(--accent);
+  padding: 0.6em 1em;
+  margin: 1.5em 0;
+  font-size: 0.88em;
+  line-height: 1.7;
+}
+blockquote p {
+  text-indent: 0;
+  margin: 0.3em 0;
+}
+sup {
+  color: var(--accent);
+  font-size: 0.75em;
+}
+/* pandoc 脚注スタイル（念のため残す） */
 .footnotes {
   border-top: 1px solid var(--border);
   margin-top: 3em;
