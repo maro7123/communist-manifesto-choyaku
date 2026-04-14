@@ -1,0 +1,83 @@
+:root {
+  --bg: #fafaf7;
+  --text: #1a1a1a;
+  --accent: #8b0000;
+  --note-bg: #f0ede6;
+  --border: #ccc;
+}
+body {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  max-width: 42em;
+  margin: 2em auto;
+  padding: 0 1.5em;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 24px;
+}
+h1 {
+  font-size: 1.6em;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3em;
+  margin-top: 2em;
+}
+h2 {
+  font-size: 1.3em;
+  color: var(--accent);
+  margin-top: 2.5em;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.6em;
+}
+h3 {
+  font-size: 1.1em;
+  margin-top: 2em;
+}
+p {
+  text-indent: 1em;
+  margin: 0.8em 0;
+}
+strong {
+  font-weight: bold;
+}
+figure {
+  margin: 2em 0;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+figcaption {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 0.5em;
+}
+/* pandoc 脚注スタイル */
+.footnotes {
+  border-top: 1px solid var(--border);
+  margin-top: 3em;
+  padding-top: 1em;
+  font-size: 0.88em;
+  line-height: 1.7;
+}
+.footnotes li {
+  margin: 0.5em 0;
+}
+.footnotes p {
+  text-indent: 0;
+}
+a.footnote-ref {
+  color: var(--accent);
+  font-size: 0.75em;
+  text-decoration: none;
+}
+a.footnote-back {
+  color: var(--accent);
+  text-decoration: none;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}

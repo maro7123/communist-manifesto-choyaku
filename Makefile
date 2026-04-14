@@ -1,4 +1,16 @@
-.PHONY: deploy preview status public private
+.PHONY: html deploy preview status public private
+
+# 正本: gendai_yaku/choyaku.md
+# md → html 変換（pandoc）→ index.html にコピー
+html:
+	pandoc gendai_yaku/choyaku.md \
+		-o gendai_yaku/choyaku.html \
+		--standalone \
+		--css=style.css \
+		--metadata title="共産党宣言 現代語超訳（ステージ①ドラフト）" \
+		--metadata lang=ja
+	\cp gendai_yaku/choyaku.html index.html
+	@echo "✓ md → html 変換完了"
 
 # GitHub Pages にデプロイ（master → gh-pages マージ → push）
 deploy:
@@ -8,11 +20,10 @@ deploy:
 	git checkout master
 	@echo "✓ deployed to https://maro7123.github.io/communist-manifesto-choyaku/"
 
-# index.html を choyaku.html から再生成してコミット
-update-html:
-	cp gendai_yaku/choyaku.html index.html
-	git add index.html
-	git commit -m "update index.html from choyaku.html"
+# md から html 生成してコミット
+update-html: html
+	git add gendai_yaku/choyaku.html index.html
+	git commit -m "update html from choyaku.md"
 
 # ローカルでブラウザプレビュー
 preview:
