@@ -1,4 +1,4 @@
-.PHONY: deploy preview status
+.PHONY: deploy preview status public private
 
 # GitHub Pages にデプロイ（master → gh-pages マージ → push）
 deploy:
@@ -17,6 +17,16 @@ update-html:
 # ローカルでブラウザプレビュー
 preview:
 	xdg-open index.html 2>/dev/null || open index.html 2>/dev/null || echo "open index.html in your browser"
+
+# リポジトリを public にして Pages 公開
+public:
+	gh repo edit maro7123/communist-manifesto-choyaku --visibility public
+	@echo "✓ public に切り替え。Pages が有効なら https://maro7123.github.io/communist-manifesto-choyaku/ で公開"
+
+# リポジトリを private にして非公開
+private:
+	gh repo edit maro7123/communist-manifesto-choyaku --visibility private
+	@echo "✓ private に切り替え。Pages は停止"
 
 # Pages のデプロイ状態を確認
 status:
