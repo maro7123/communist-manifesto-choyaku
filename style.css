@@ -13,7 +13,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.9;
-  font-size: 24px;
+  font-size: 18px;
 }
 h1 {
   font-size: 1.6em;
@@ -53,6 +53,11 @@ figcaption {
   color: #666;
   margin-top: 0.5em;
 }
+/* PC向け拡大 */
+@media (min-width: 768px) {
+  body { font-size: 22px; }
+}
+
 /* セクション末注釈（blockquote） */
 blockquote {
   background: #f0ede6;
